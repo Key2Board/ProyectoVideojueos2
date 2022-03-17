@@ -1,2 +1,2 @@
-# ProyectoVideojueos2
+# ProyectoVideojuegos2
 El repositorio para Proyecto de Videojuegos II
