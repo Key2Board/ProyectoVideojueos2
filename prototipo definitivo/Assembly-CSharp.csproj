@@ -47,18 +47,23 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_KeyManager.cs" />
-     <Compile Include="Assets\CameraShake.cs" />
-     <Compile Include="Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_Rope.cs" />
-     <Compile Include="Assets\Simple FPS Controller\Scripts\Wall Run\SFPSC_WallRun.cs" />
-     <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_PlayerMovement.cs" />
-     <Compile Include="Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_GrapplingHook.cs" />
-     <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
-     <None Include="Assets\PolygonPrototype\Shaders\Prototype_Glass_Global.shader" />
-     <None Include="Assets\PolygonPrototype\Shaders\Prototype_Object.shader" />
-     <None Include="Assets\Simple FPS Controller\Materials\Shaders\Unlit_Texture_Color.shader" />
-     <None Include="Assets\PolygonPrototype\Shaders\Prototype_Global.shader" />
-     <None Include="Assets\PolygonPrototype\Shaders\Prototype_Glass_Object.shader" />
+     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\SFPSC_KeyManager.cs" />
+     <Compile Include="Assets\Scripts\CameraShake.cs" />
+     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_Rope.cs" />
+     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\Wall Run\SFPSC_WallRun.cs" />
+     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\SFPSC_PlayerMovement.cs" />
+     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_GrapplingHook.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Trigger.cs" />
+     <Compile Include="Assets\Scripts\Teleport.cs" />
+     <Compile Include="Assets\Scripts\CambioEscena.cs" />
+     <Compile Include="Assets\Scripts\Botones.cs" />
+     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
+     <None Include="Assets\Assets\PolygonPrototype\Shaders\Prototype_Glass_Global.shader" />
+     <None Include="Assets\Assets\PolygonPrototype\Shaders\Prototype_Object.shader" />
+     <None Include="Assets\Assets\Simple FPS Controller\Materials\Shaders\Unlit_Texture_Color.shader" />
+     <None Include="Assets\Assets\PolygonPrototype\Shaders\Prototype_Global.shader" />
+     <None Include="Assets\Assets\PolygonPrototype\Shaders\Prototype_Glass_Object.shader" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
