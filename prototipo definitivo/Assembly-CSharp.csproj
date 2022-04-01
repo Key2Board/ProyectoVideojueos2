@@ -53,12 +53,15 @@
     <UnityVersion>2020.3.30f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\SFPSC_KeyManager.cs" />
     <Compile Include="Assets\Scripts\CameraShake.cs" />
+    <Compile Include="Assets\Scripts\HeadBobber.cs" />
+    <Compile Include="Assets\Scripts\ActivarCursor.cs" />
     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_Rope.cs" />
+    <Compile Include="Assets\Assets\Free HDR Skyboxes Pack\Example Scenes\Script\RotateCamera.cs" />
     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\Wall Run\SFPSC_WallRun.cs" />
     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\SFPSC_PlayerMovement.cs" />
     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_GrapplingHook.cs" />
@@ -68,8 +71,6 @@
     <Compile Include="Assets\Scripts\CambioEscena.cs" />
     <Compile Include="Assets\Scripts\Botones.cs" />
     <Compile Include="Assets\Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
-    <Compile Include="Assets\Assets\Free HDR Skyboxes Pack\Example Scenes\Script\RotateCamera.cs" />
-    <Compile Include="Assets\Scripts\ActivarCursor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\PolygonPrototype\Shaders\Prototype_Glass_Global.shader" />
@@ -665,22 +666,20 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{0640AFF3-493B-E2AE-3976-13D9BECF7F96}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{C0BBA8EE-6112-1F52-9967-698F2A62A5B0}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
