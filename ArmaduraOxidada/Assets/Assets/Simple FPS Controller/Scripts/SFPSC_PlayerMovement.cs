@@ -42,9 +42,14 @@ public class SFPSC_PlayerMovement : MonoBehaviour
     public float jumpForce = 500.0f;
     public float jumpCooldown = 1.0f;
     private bool jumpBlocked = false;
+    //Tiempo después del salto para sonar el sonido de caída
+    public float jumpPlayTime = 0.6f;
 
     private SFPSC_WallRun wallRun;
     private SFPSC_GrapplingHook grapplingHook;
+
+    public AudioSource Impulso;
+    public AudioSource Aterrizaje;
 
     private void Start()
     {
@@ -100,8 +105,12 @@ public class SFPSC_PlayerMovement : MonoBehaviour
             if (Input.GetButton("Jump") && !jumpBlocked)
             {
                 rb.AddForce(-jumpForce * rb.mass * Vector3.down);
+                //Sondio al comenzar el salto
+                Impulso.Play();
                 jumpBlocked = true;
                 Invoke("UnblockJump", jumpCooldown);
+                //Invoca la función PlayJump para que suene el sonido de aterrizaje
+                Invoke("PlayJump", jumpPlayTime);
             }
             // Ground controller
             rb.velocity = Vector3.Lerp(rb.velocity, inputForce, changeInStageSpeed * Time.fixedDeltaTime);
@@ -150,8 +159,13 @@ public class SFPSC_PlayerMovement : MonoBehaviour
     {
         jumpBlocked = false;
     }
-    
-    
+    //Configurado para sonar cuando aterriza
+    private void PlayJump()
+    {
+        Aterrizaje.Play();
+    }
+
+
     // Enables jumping and player movement
     public void EnableMovement()
     {

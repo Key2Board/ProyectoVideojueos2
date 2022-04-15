@@ -8,6 +8,8 @@ public class HeadBobber : MonoBehaviour
     public float bobbingAmount = 0.2f;
     public float midpoint = 2.0f;
     Vector3 targetPos;
+    public GameObject player;
+    public GameObject pause;
 
     public bool smooth = true;
     private Vector3 velocity = Vector3.zero;
@@ -15,10 +17,14 @@ public class HeadBobber : MonoBehaviour
 
     void Update()
     {
-
+        if (pause.GetComponent<Pausar>().IsPaused)
+        {
+            return;
+        }
         float waveslice = 0.0f;
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+        bool isGrounded = player.GetComponent<SFPSC_PlayerMovement>().IsGrounded;
 
         if (Mathf.Abs(horizontal) == 0 && Mathf.Abs(vertical) == 0)
         {
@@ -32,6 +38,11 @@ public class HeadBobber : MonoBehaviour
             if (timer > Mathf.PI * 2f)
             {
                 timer = timer - (Mathf.PI * 2f);
+                          
+                if (isGrounded)
+                {
+                    Pasos.Play();                       
+                }
             }
         }
 
@@ -43,10 +54,17 @@ public class HeadBobber : MonoBehaviour
             totalAxes = Mathf.Clamp(totalAxes, 0f, 1.0f);
             translateChange = totalAxes * translateChange;
             targetPos.Set(transform.localPosition.x, midpoint + translateChange, transform.localPosition.z);
+            Debug.Log("In Waveslice");
+            
         }
         else
         {
             targetPos.Set(transform.localPosition.x, midpoint, transform.localPosition.z);
+            Debug.Log("Out Waveslice");
+            /*if (isGrounded)
+            {
+                Pasos.Play();
+            }*/
         }
 
         if (smooth)

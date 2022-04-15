@@ -9,6 +9,7 @@ public class Pausar : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject Camera;
+    public bool IsPaused { get { return Pausar.GameIsPaused; } }
 
     void Update()
     {
