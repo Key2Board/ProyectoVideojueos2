@@ -38,11 +38,10 @@ public class HeadBobber : MonoBehaviour
             if (timer > Mathf.PI * 2f)
             {
                 timer = timer - (Mathf.PI * 2f);
-                          
-                if (isGrounded)
-                {
-                    Pasos.Play();                       
-                }
+                    if (isGrounded)
+                    {
+                        Pasos.Play();
+                   }       
             }
         }
 
